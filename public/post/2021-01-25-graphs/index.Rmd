@@ -1,13 +1,13 @@
 ---
-title: "Graphs with R"
+title: "R Graphs"
 author: "Manish Gyawali"
-date: 2021-91-25
+date: 2021-01-25
 categories: ["R"]
 tags: ["R Markdown", "plot", "regression"]
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(collapse = TRUE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r}
@@ -20,15 +20,17 @@ library(magrittr)
 
 Here we see tables being generated.
 
-```{r cars}
+```{r, comment=NA, echo = F}
+
 dplyr::glimpse(diamonds)
+
 ```
 
 # Including Plots
 
 You can also embed plots. See Figure \@ref(fig: Graphs) for example:
 
-```{r diamonds, fig.cap='Graphs.', tidy=FALSE}
+```{r diamonds, fig.cap='Graphs.', tidy=FALSE, echo=FALSE}
 
 diamonds %>%
   ggplot(aes(price,carat)) + 

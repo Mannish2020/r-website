@@ -21,7 +21,7 @@ library(magrittr)
 
 Here we see tables being generated.
 
-```{r, comment=""}
+```{r, comment="", echo = F}
 dplyr::glimpse(diamonds)
 ```
 

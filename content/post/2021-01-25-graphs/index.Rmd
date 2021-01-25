@@ -7,7 +7,8 @@ tags: ["R Markdown", "plot", "regression"]
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(collapse = TRUE)
+knitr::opts_chunk$set(collapse = TRUE, comment = "",echo = FALSE,
+                      warning = FALSE, message = FALSE)
 ```
 
 ```{r}
@@ -20,7 +21,7 @@ library(magrittr)
 
 Here we see tables being generated.
 
-```{r cars}
+```{r diamonds}
 dplyr::glimpse(diamonds)
 ```
 

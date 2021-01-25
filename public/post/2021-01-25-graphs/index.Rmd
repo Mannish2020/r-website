@@ -1,0 +1,40 @@
+---
+title: "Graphs with R"
+author: "Manish Gyawali"
+date: 2021-91-25
+categories: ["R"]
+tags: ["R Markdown", "plot", "regression"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+```{r}
+library(plotly)
+library(magrittr)
+```
+
+
+# R Table Generation
+
+Here we see tables being generated.
+
+```{r cars}
+dplyr::glimpse(diamonds)
+```
+
+# Including Plots
+
+You can also embed plots. See Figure \@ref(fig: Graphs) for example:
+
+```{r diamonds, fig.cap='Graphs.', tidy=FALSE}
+
+diamonds %>%
+  ggplot(aes(price,carat)) + 
+  geom_point(aes(colour = color)) +
+  geom_smooth(colour = "red") + 
+  facet_wrap(~cut)
+
+
+```

@@ -39,3 +39,8 @@ diamonds %>%
   facet_wrap(~cut)
 
 ```
+
+```{r}
+plot_ly(z = ~volcano, type = "surface")
+```
+

@@ -44,3 +44,7 @@ diamonds %>%
 plot_ly(z = ~volcano, type = "surface")
 ```
 
+```{r}
+head(mtcars)
+```
+

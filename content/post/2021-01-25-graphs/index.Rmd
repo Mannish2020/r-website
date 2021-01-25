@@ -6,7 +6,7 @@ categories: ["R"]
 tags: ["R Markdown", "plot", "regression"]
 ---
 
-```{r setup, include=FALSE}
+```{r setup}
 knitr::opts_chunk$set(collapse = TRUE, comment = "",echo = FALSE,
                       warning = FALSE, message = FALSE)
 ```
@@ -21,7 +21,7 @@ library(magrittr)
 
 Here we see tables being generated.
 
-```{r diamonds}
+```{r, comment=""}
 dplyr::glimpse(diamonds)
 ```
 
@@ -29,7 +29,7 @@ dplyr::glimpse(diamonds)
 
 You can also embed plots. See Figure \@ref(fig: Graphs) for example:
 
-```{r diamonds, fig.cap='Graphs.', tidy=FALSE}
+```{r diamonds, fig.cap='Graphs.', tidy=FALSE, echo=FALSE}
 
 diamonds %>%
   ggplot(aes(price,carat)) + 

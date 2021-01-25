@@ -1,0 +1,59 @@
+---
+title: "Graphs with R"
+author: "Manish Gyawali"
+date: 2021-91-25
+categories: ["R"]
+tags: ["R Markdown", "plot", "regression"]
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<pre class="r"><code>library(plotly)
+## Loading required package: ggplot2
+## 
+## Attaching package: &#39;plotly&#39;
+## The following object is masked from &#39;package:ggplot2&#39;:
+## 
+##     last_plot
+## The following object is masked from &#39;package:stats&#39;:
+## 
+##     filter
+## The following object is masked from &#39;package:graphics&#39;:
+## 
+##     layout
+library(magrittr)</code></pre>
+<div id="r-table-generation" class="section level1">
+<h1>R Table Generation</h1>
+<p>Here we see tables being generated.</p>
+<pre class="r"><code>dplyr::glimpse(diamonds)
+## Rows: 53,940
+## Columns: 10
+## $ carat   &lt;dbl&gt; 0.23, 0.21, 0.23, 0.29, 0.31, 0.24, 0.24, 0.26, 0.22, 0.23,...
+## $ cut     &lt;ord&gt; Ideal, Premium, Good, Premium, Good, Very Good, Very Good, ...
+## $ color   &lt;ord&gt; E, E, E, I, J, J, I, H, E, H, J, J, F, J, E, E, I, J, J, J,...
+## $ clarity &lt;ord&gt; SI2, SI1, VS1, VS2, SI2, VVS2, VVS1, SI1, VS2, VS1, SI1, VS...
+## $ depth   &lt;dbl&gt; 61.5, 59.8, 56.9, 62.4, 63.3, 62.8, 62.3, 61.9, 65.1, 59.4,...
+## $ table   &lt;dbl&gt; 55, 61, 65, 58, 58, 57, 57, 55, 61, 61, 55, 56, 61, 54, 62,...
+## $ price   &lt;int&gt; 326, 326, 327, 334, 335, 336, 336, 337, 337, 338, 339, 340,...
+## $ x       &lt;dbl&gt; 3.95, 3.89, 4.05, 4.20, 4.34, 3.94, 3.95, 4.07, 3.87, 4.00,...
+## $ y       &lt;dbl&gt; 3.98, 3.84, 4.07, 4.23, 4.35, 3.96, 3.98, 4.11, 3.78, 4.05,...
+## $ z       &lt;dbl&gt; 2.43, 2.31, 2.31, 2.63, 2.75, 2.48, 2.47, 2.53, 2.49, 2.39,...</code></pre>
+</div>
+<div id="including-plots" class="section level1">
+<h1>Including Plots</h1>
+<p>You can also embed plots. See Figure @ref(fig: Graphs) for example:</p>
+<pre class="r"><code>
+diamonds %&gt;%
+  ggplot(aes(price,carat)) + 
+  geom_point(aes(colour = color)) +
+  geom_smooth(colour = &quot;red&quot;) + 
+  facet_wrap(~cut)
+## `geom_smooth()` using method = &#39;gam&#39; and formula &#39;y ~ s(x, bs = &quot;cs&quot;)&#39;</code></pre>
+<div class="figure"><span id="fig:diamonds"></span>
+<img src="{{< blogdown/postref >}}index_files/figure-html/diamonds-1.png" alt="Graphs." width="672" />
+<p class="caption">
+Figure 1: Graphs.
+</p>
+</div>
+</div>

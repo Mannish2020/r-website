@@ -16,7 +16,7 @@ library(magrittr)
 ```
 
 
-# R Table Generation
+# R Generate Tables
 
 Here we see tables being generated.
 

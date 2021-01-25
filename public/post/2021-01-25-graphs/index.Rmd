@@ -22,7 +22,7 @@ Here we see tables being generated.
 
 ```{r, comment=NA, echo = F}
 
-dplyr::glimpse(diamonds)
+head(diamonds)
 
 ```
 
@@ -37,6 +37,5 @@ diamonds %>%
   geom_point(aes(colour = color)) +
   geom_smooth(colour = "red") + 
   facet_wrap(~cut)
-
 
 ```
